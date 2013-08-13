@@ -52,6 +52,7 @@ module Kitchen
         solo << %{file_cache_path "#{home_path}/cache"}
         solo << %{cookbook_path "#{home_path}/cookbooks"}
         solo << %{role_path "#{home_path}/roles"}
+	solo << %{yum_timeout 7200} # increase timeout
         if instance.suite.data_bags_path
           solo << %{data_bag_path "#{home_path}/data_bags"}
         end
